@@ -1,20 +1,37 @@
 {
    "presets": [
-     [
-       "@babel/preset-env",
-       {
-         "targets": {
-           "node": "current"
+      [
+         "@babel/preset-env",
+         {
+            "targets": {
+               "node": "current"
+            }
          }
-       }
-     ],
-     [
-       "@babel/preset-react"
-     ]
+      ],
+      [
+         "@babel/preset-react"
+      ]
    ],
    "plugins": [
-     [
-       "@babel/plugin-proposal-class-properties"
-     ]
+      [
+         "@babel/plugin-proposal-class-properties"
+      ],
+      [
+         "module-resolver",
+         {
+            "extensions": [
+               ".js",
+               ".jsx"
+            ],
+            "root": [
+               "."
+            ],
+            "alias": {
+               "~": "./src",
+               "@components": "./src/components",
+               "@pages": "./src/pages"
+            }
+         }
+      ]
    ]
- }
+}

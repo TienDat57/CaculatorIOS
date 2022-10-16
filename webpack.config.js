@@ -1,6 +1,5 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
-const htmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = [
    {
@@ -13,7 +12,7 @@ module.exports = [
          publicPath: "/"
       },
       target: "node",
-     
+
       externals: nodeExternals(),
       module: {
          rules: [
@@ -54,12 +53,12 @@ module.exports = [
          ]
       },
       resolve: {
-         extensions: [".js", ".jsx"]
-      },
-      plugins: [
-         new htmlWebpackPlugin({
-            template: "./public/index.html"
-         })
-      ]
+         extensions: [".js", ".jsx"],
+         alias: {
+            "~": path.resolve(__dirname, "src"),
+            "@components": path.resolve(__dirname, "src/components"),
+            "@pages": path.resolve(__dirname, "src/pages")
+         },
+      }
    }
 ];
