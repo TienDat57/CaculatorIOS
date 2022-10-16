@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/server';
 import { StaticRouter } from 'react-router-dom/server';
 require('dotenv').config();
 
-import App from '../src/index';
+import App from "~/index";
 
 const app = express();
 const port = process.env.PORT || 3000;

@@ -61,28 +61,23 @@
     },
     "settings": {
         "import/resolver": {
-            // "alias": [
-            //     [
-            //         "~",
-            //         "./src"
-            //     ],
-            //     [
-            //         "@components",
-            //         "./src/components"
-            //     ],
-            //     [
-            //         "@pages",
-            //         "./src/pages"
-            //     ]
-            // ],
-            "node": {
-                "extensions": [
-                    ".js",
-                    ".jsx",
-                    ".ts",
-                    ".tsx"
+            "alias": [
+                [
+                    "~",
+                    "./src"
+                ],
+                [
+                    "@components",
+                    "./src/components"
+                ],
+                [
+                    "@pages",
+                    "./src/pages"
                 ]
-            }
+            ]
+        },
+        "react": {
+            "version": "detect"
         }
     }
 }

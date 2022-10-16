@@ -1,4 +1,4 @@
-import { Calculator, History } from "../pages/index";
+import { Calculator, History } from "@pages/index";
 
 const routes = [
    {
