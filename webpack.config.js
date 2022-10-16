@@ -24,7 +24,15 @@ module.exports = [
                      loader: "babel-loader"
                   }
                ]
-            }
+            },
+            {
+               test: /\.s[ac]ss$/i,
+               use: [
+                  'style-loader',
+                  'css-loader',
+                  'sass-loader',
+               ],
+            },
          ]
       },
       resolve: {
@@ -49,15 +57,29 @@ module.exports = [
                      loader: "babel-loader"
                   }
                ]
+            },
+            {
+               test: /\.s[ac]ss$/i,
+               use: [
+                  {
+                     loader: "style-loader"
+                  },
+                  {
+                     loader: "css-loader"
+                  },
+                  {
+                     loader: "sass-loader"
+                  },
+               ],
             }
          ]
       },
       resolve: {
          extensions: [".js", ".jsx"],
          alias: {
-            "~": path.resolve(__dirname, "src"),
-            "@components": path.resolve(__dirname, "src/components"),
-            "@pages": path.resolve(__dirname, "src/pages")
+            "~": "./src",
+            "@components": "./src/components",
+            "@pages": "./src/pages",
          },
       }
    }
