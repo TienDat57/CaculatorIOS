@@ -13,7 +13,7 @@ module.exports = [
          publicPath: "/"
       },
       target: "node",
-     
+
       externals: nodeExternals(),
       module: {
          rules: [
@@ -55,11 +55,6 @@ module.exports = [
       },
       resolve: {
          extensions: [".js", ".jsx"]
-      },
-      plugins: [
-         new htmlWebpackPlugin({
-            template: "./public/index.html"
-         })
-      ]
+      }
    }
 ];
