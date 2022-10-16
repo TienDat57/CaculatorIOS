@@ -13,7 +13,7 @@ const host = process.env.HOST || 'localhost';
 app.use(express.static('build'));
 
 app.get('*', (req, res) => {
-   const markup = ReactDOM.renderToString(
+   const app = ReactDOM.renderToString(
       <StaticRouter location={req.url}>
          <App />
       </StaticRouter>,
@@ -25,7 +25,7 @@ app.get('*', (req, res) => {
       <title>UDT Testing</title>
     </head>
     <body>
-      <div id="root">${markup}</div>
+      <div id="root">${app}</div>
     </body>
   </html>
 `);

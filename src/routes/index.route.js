@@ -1,5 +1,4 @@
-import History from '../pages/History/index';
-import Calculator from '../pages/Calculator/index';
+import { Calculator, History } from "../pages/index";
 
 const routes = [
    {
