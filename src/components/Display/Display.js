@@ -8,9 +8,9 @@ const cx = classNames.bind(styles);
 function Display({ input, setInput, answer }) {
 
    const onChangeTagInput = (e) => {
-      const re = /^[!%(-+\x2D-9^glox\xF7\u221A]+$/;
+      const regEx = /^[!%(-+\x2D-9^glox\xF7\u221A]+$/;
 
-      if (e.target.value === "" || re.test(e.target.value)) {
+      if (e.target.value === "" || regEx.test(e.target.value)) {
          setInput(e.target.value);
       }
    };
