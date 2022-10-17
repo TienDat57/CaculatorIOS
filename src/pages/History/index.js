@@ -1,13 +1,3 @@
-import React from 'react';
-import Button from '../../components/Button';
-
-function History() {
-   return (
-      <div className="history">
-         <h1>History</h1>
-         <Button isNumber>Button</Button>
-      </div>
-   );
-}
+import History from "./History";
 
 export default History;

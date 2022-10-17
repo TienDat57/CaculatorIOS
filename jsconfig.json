@@ -1,17 +1,17 @@
-{
-   "compilerOptions": {
-      "baseUrl": ".",
-      "paths": {
-         "~/*": [
-            "src/*"
-         ],
-         "@components/*": [
-            "src/components/*"
-         ],
-         "@pages/*": [
-            "src/pages/*"
-         ]
-      }
-   },
-   "exclude": ["node_modules"]
-}
+// {
+//    "compilerOptions": {
+//       "baseUrl": ".",
+//       "paths": {
+//          "~/*": [
+//             "src/*"
+//          ],
+//          "@components/*": [
+//             "src/components/*"
+//          ],
+//          "@pages/*": [
+//             "src/pages/*"
+//          ]
+//       }
+//    },
+//    "exclude": ["node_modules"]
+// }
