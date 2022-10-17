@@ -17,14 +17,13 @@ function Display({ input, setInput, answer }) {
 
    return (
       <>
-         <div className="display">
+         <div className={cx("display")}>
             {answer === "" ? (
                <>
                   <input
                      type="text"
                      name="input"
-                     className="input"
-                     style={{ padding: "29px" }}
+                     className={cx("input")}
                      value={input}
                      placeholder="0"
                      maxLength={12}
@@ -37,7 +36,7 @@ function Display({ input, setInput, answer }) {
                   <input
                      type="text"
                      name="input"
-                     className="value"
+                     className={cx("value")}
                      value={input}
                      placeholder="0"
                      maxLength={12}
@@ -46,7 +45,7 @@ function Display({ input, setInput, answer }) {
                   <input
                      type="text"
                      name="value"
-                     className="input"
+                     className={cx("input")}
                      value={answer}
                      disabled
                   />

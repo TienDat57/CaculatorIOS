@@ -9,7 +9,6 @@ function Calculator() {
 
    return (
       <div className="Calculator">
-         <h1>Calculator</h1>
          <Header />
          <Display input={input} setInput={setInput} answer={answer} />
          <Button isNumber>+</Button>
