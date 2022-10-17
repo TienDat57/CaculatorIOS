@@ -1,7 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames/bind';
 
-import './button.scss';
+import styles from './Button.module.scss';
+
+const cx = classNames.bind(styles);
 
 function Button({
    expression = false,
@@ -17,16 +20,20 @@ function Button({
       ...passProps,
    };
 
-   const classes = 'wrapper'
-   // , {
-   //    [className]: className,
-   //    expression,
-   //    isNumber,
-   // });
+   const classes = cx('wrapper', {
+      [className]: className,
+      expression,
+      isNumber,
+   });
+
+   const classTitle = cx('title', {
+      expression,
+      isNumber,
+   });
 
    return (
       <Component className={classes} {...props}>
-         <span className='title'>{children}</span>
+         <span className={classTitle}>{children}</span>
       </Component>
    );
 }

@@ -6,7 +6,7 @@ import Button from './components/Button';
 
 const App = ({ route }) => (
    <div>
-      <Button>Button</Button>
+      <Button isNumber>+</Button>
       {renderRoutes(route.routes)}
    </div>
 );

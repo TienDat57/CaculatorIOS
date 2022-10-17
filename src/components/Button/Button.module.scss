@@ -1,0 +1,35 @@
+@import '../../global.scss';
+
+.wrapper {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   min-width: 100px;
+   padding: 19px 0px;
+   font-size: 53px;
+   font-weight: 700;
+   font-family: map-get($font-family, primary);
+   cursor: pointer;
+   border: 1px solid transparent;
+   user-select: none;
+}
+
+.expression {
+   color: map-get($color-type, color-text);
+   background-color: map-get($color-type, button-expression);
+   border-color: map-get($color-type, button-expression-other);
+
+   &:hover {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), map-get($color-type, option-calculation-one);
+   }
+}
+
+.isNumber {
+   color: map-get($color-type, color-text);
+   background-color: map-get($color-type, primary);
+   border-color: map-get($color-type, secondary);
+
+   &:hover {
+      background: linear-gradient(0deg, rgba(0, 0, 0, 0.06), rgba(0, 0, 0, 0.06)), map-get($color-type, primary);
+   }
+}
