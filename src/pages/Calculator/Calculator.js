@@ -12,7 +12,7 @@ function Calculator() {
          <h1>Calculator</h1>
          <Header />
          <Display input={input} setInput={setInput} answer={answer} />
-         <Button />
+         <Button isNumber>+</Button>
       </div>
    );
 }
