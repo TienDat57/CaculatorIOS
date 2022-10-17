@@ -15,6 +15,7 @@ export default (req) => {
     <html>
       <head>
         <title>UDT Testing</title>
+        <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset200802.css">
         <link rel="stylesheet" href="./main.css">
       </head>
       <body>

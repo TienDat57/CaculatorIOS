@@ -7,8 +7,12 @@ const cx = classNames.bind(styles);
 
 function Header() {
    return (
-      <div>
-         <h1>Header Component</h1>
+      <div className={cx('calculatorHeader', 'header')}>
+         <div className={cx('icon')}>
+            <span className={cx('iconCircle', 'iconCircle-red')}></span>
+            <span className={cx('iconCircle', 'iconCircle-yellow')}></span>
+            <span className={cx('iconCircle', 'iconCircle-green')}></span>
+         </div>
       </div>
    );
 }

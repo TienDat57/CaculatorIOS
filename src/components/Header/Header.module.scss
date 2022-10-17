@@ -1,0 +1,31 @@
+@import '../../global.scss';
+
+.calculatorHeader {
+   background-color: map-get($color-type, primary);
+   padding: 10px;
+   width: 100%;
+}
+
+.icon {
+   margin-top: 3px;
+   margin-left: 5px;
+   display: flex;
+   flex-direction: row;
+   gap: 10px;
+
+   &Circle {
+      border-radius: 50%;
+      border: 10px solid transparent;
+      &-red {
+         border-color: rgb(240, 95, 95);
+      }
+      &-yellow {
+         border-color: rgb(233, 233, 109);
+      }
+      &-green {
+         border-color: rgb(95, 240, 95);
+      }
+   }
+}
+
+
