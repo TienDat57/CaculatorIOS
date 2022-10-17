@@ -13,6 +13,10 @@ export default (req) => {
    );
    return `
     <html>
+      <head>
+        <title>UDT Testing</title>
+        <link rel="stylesheet" href="./main.css">
+      </head>
       <body>
         <div id="root">${content}</div>
         <script src="./bundle.js"></script>

@@ -1,5 +1,6 @@
 const path = require('path');
 const webpackNodeExternals = require('webpack-node-externals');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 module.exports = {
    target: 'node',
@@ -20,6 +21,18 @@ module.exports = {
                },
             },
          },
+
+         {
+            test: /\.s[ac]ss$/i,
+            use: [
+               MiniCssExtractPlugin.loader,
+               'css-loader',
+               'sass-loader',
+            ]
+         }
       ],
    },
+   plugins: [
+      new MiniCssExtractPlugin(),
+   ],
 };
