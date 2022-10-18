@@ -12,6 +12,7 @@ function KeyBoard({ inputHandler, clearInput, changePlusMinus, calculateAnswer }
          <Button
             optional
             onClick={clearInput}
+            id="clearButton"
          >
             AC
          </Button>
