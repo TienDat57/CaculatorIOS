@@ -22,6 +22,11 @@
 .button--zero {
    grid-column-start: 1;
    grid-column-end: 3;
+   border-bottom-left-radius: 25px;
+}
+
+.button--equal {
+   border-bottom-right-radius: 25px;
 }
 
 .clear {
