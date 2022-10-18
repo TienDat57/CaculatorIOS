@@ -14,9 +14,16 @@ function Calculator() {
    const [inputShow, setInputShow] = useState("");
    const [answer, setAnswer] = useState("");
 
+   const storeToHistory = (result) => {
+      let listCalculation = localStorage.getItem("listCalculation");
+      listCalculation = listCalculation ? JSON.parse(listCalculation) : [];
+      listCalculation.push(result)
+      localStorage.setItem("listCalculation", JSON.stringify(listCalculation))
+   }
+
    const inputHandler = (event) => {
       let val = event.target.innerText;
-      
+
       const changeAC = document.getElementById("clearButton");
       changeAC.innerText = "C";
 
@@ -52,6 +59,7 @@ function Calculator() {
       finalExpression = finalExpression.replaceAll(",", ".");
 
       result = evaluate(finalExpression);
+      storeToHistory({ expression: finalExpression, result: result });
       isNaN(result) ? setAnswer(result) : setAnswer(round(result, 3));
    };
 
