@@ -8,23 +8,21 @@
    cursor: pointer;
    background: none;
    border: 1px solid map-get($color-type, line-space);
+   color: map-get($color-type, color-text);
    span {
       opacity: 0.9;
    }
 }
 
 .expression {
-   color: map-get($color-type, color-text);
    background-color: map-get($color-type, button-expression);
 }
 
 .isNumber {
-   color: map-get($color-type, color-text);
    background-color: map-get($color-type, secondary);
 }
 
 .optional {
-   color: map-get($color-type, color-text);
    background-color: map-get($color-type, button-expression-other);
 }
 

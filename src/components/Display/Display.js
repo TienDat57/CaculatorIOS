@@ -33,15 +33,6 @@ function Display({ input, setInput, answer }) {
                </>
             ) : (
                <>
-                  {/* <input
-                     type="text"
-                     name="input"
-                     className={cx("value")}
-                     value={input}
-                     placeholder="0"
-                     maxLength={9}
-                     disabled
-                  /> */}
                   <input
                      type="text"
                      name="value"
