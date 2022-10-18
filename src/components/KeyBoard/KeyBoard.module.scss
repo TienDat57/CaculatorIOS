@@ -1,0 +1,7 @@
+@import "../../global.scss";
+
+.list-button {
+   display: grid;
+   grid-template-rows: repeat(5, 95px);
+   grid-template-columns: repeat(4, calc(100% / 4));
+}

@@ -1,11 +1,3 @@
-import React from 'react';
-
-function Calculator() {
-   return (
-      <div className="history">
-         <h1>Calculator</h1>
-      </div>
-   );
-}
+import Calculator from "./Calculator";
 
 export default Calculator;

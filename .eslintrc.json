@@ -6,8 +6,7 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:import/errors",
-        "plugin:import/warnings",
+        "plugin:import/recommended",
         "plugin:react/recommended",
         "plugin:jsx-a11y/recommended"
     ],
@@ -71,13 +70,10 @@
                     "./src/components"
                 ],
                 [
-                    "@pages",
-                    "./src/pages"
+                    "@utils",
+                    "./src/utils"
                 ]
             ]
-        },
-        "react": {
-            "version": "detect"
         }
     }
 }

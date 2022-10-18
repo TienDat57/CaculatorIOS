@@ -1,0 +1,44 @@
+@import '../../global.scss';
+
+.display {
+   display: flex;
+   flex-direction: column;
+   padding: 10px;
+   padding-bottom: 20px;
+   background: map-get($color-type, primary);
+}
+
+.expression {
+   padding: 5px;
+   margin-bottom: 10px;
+   height: 50px;
+}
+
+.input,
+.value {
+   padding: 10px;
+   text-align: right;
+   background-color: transparent;
+   color: white;
+   border: 0px;
+   letter-spacing: 1.5px;
+}
+
+.input {
+   font-size: 80px;
+}
+
+.value {
+   font-size: 40px;
+}
+
+.input::placeholder,
+.value::placeholder {
+   color: white;
+}
+
+.input:focus-visible,
+.value:focus-visible {
+   outline-style: none;
+   outline-width: 0px;
+}
