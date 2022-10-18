@@ -26,22 +26,22 @@ function Display({ input, setInput, answer }) {
                      className={cx("input")}
                      value={input}
                      placeholder="0"
-                     maxLength={12}
+                     maxLength={9}
                      onChange={onChangeTagInput}
                      autoComplete="off"
                   />
                </>
             ) : (
                <>
-                  <input
+                  {/* <input
                      type="text"
                      name="input"
                      className={cx("value")}
                      value={input}
                      placeholder="0"
-                     maxLength={12}
+                     maxLength={9}
                      disabled
-                  />
+                  /> */}
                   <input
                      type="text"
                      name="value"
