@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
 import { evaluate, i, round } from "mathjs";
 
@@ -10,15 +10,18 @@ import styles from './Calculator.module.scss';
 const cx = classNames.bind(styles);
 
 function Calculator() {
-   const [input, setInput] = useState(""); //set input to show display
-   const [inputShow, setInputShow] = useState(""); //set input include number and operator to calculate answer 
-   const [answer, setAnswer] = useState(""); //set answer to show display
+   const [input, setInput] = useState("");
+   const [inputShow, setInputShow] = useState("");
+   const [answer, setAnswer] = useState("");
 
    const inputHandler = (event) => {
       let val = event.target.innerText;
+      
+      const changeAC = document.getElementById("clearButton");
+      changeAC.innerText = "C";
 
+      if (val > 9) return;
       let str = input + val;
-      if (str.length > 9) return;
 
       if (val != "+" && val != "-" && val != "x" && val != "÷") {
          setInputShow(inputShow + val);
