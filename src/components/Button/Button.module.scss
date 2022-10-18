@@ -3,10 +3,14 @@
 .wrapper {
    width: 100%;
    height: 95px;
-   font-size: 28px;
-   font-weight: 700;
+   font-size: 40px;
+   font-weight: 500;
    cursor: pointer;
    background: none;
+   border: 1px solid map-get($color-type, line-space);
+   span {
+      opacity: 0.9;
+   }
 }
 
 .expression {
@@ -19,6 +23,11 @@
    background-color: map-get($color-type, secondary);
 }
 
+.optional {
+   color: map-get($color-type, color-text);
+   background-color: map-get($color-type, button-expression-other);
+}
+
 .button--zero {
    grid-column-start: 1;
    grid-column-end: 3;
@@ -27,8 +36,4 @@
 
 .button--equal {
    border-bottom-right-radius: 25px;
-}
-
-.clear {
-   color: #d66d75;
 }

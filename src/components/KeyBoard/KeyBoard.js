@@ -10,20 +10,19 @@ function KeyBoard({ inputHandler, clearInput, changePlusMinus, calculateAnswer }
    return (
       <div className={cx("list-button")}>
          <Button
-            expression
-            className={cx("clear")}
+            optional
             onClick={clearInput}
          >
             AC
          </Button>
          <Button
-            expression
+            optional
             onClick={changePlusMinus}
          >
             +/-
          </Button>
          <Button
-            expression
+            optional
             onClick={inputHandler}
          >
             %
@@ -114,7 +113,7 @@ function KeyBoard({ inputHandler, clearInput, changePlusMinus, calculateAnswer }
             0
          </Button>
          <Button
-            expression
+            isNumber
             onClick={inputHandler}
          >
             ,

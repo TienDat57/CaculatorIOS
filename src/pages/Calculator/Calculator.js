@@ -37,6 +37,7 @@ function Calculator() {
       let finalExpression = input;
       finalExpression = finalExpression.replaceAll("x", "*");
       finalExpression = finalExpression.replaceAll("÷", "/");
+      finalExpression = finalExpression.replaceAll(",", ".");
 
       result = evaluate(finalExpression);
       isNaN(result) ? setAnswer(result) : setAnswer(round(result, 3));

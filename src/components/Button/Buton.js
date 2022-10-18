@@ -9,6 +9,7 @@ const cx = classNames.bind(styles);
 function Button({
    expression = false,
    isNumber = false,
+   optional = false,
    children,
    className,
    onClick,
@@ -24,16 +25,12 @@ function Button({
       [className]: className,
       expression,
       isNumber,
+      optional,
    });
-
-   const classTitle = cx('title', {
-      expression,
-      isNumber,
-   });
-
+   
    return (
       <Component className={classes} {...props}>
-         <span className={classTitle}>{children}</span>
+         <span className={cx('title')}>{children}</span>
       </Component>
    );
 }
