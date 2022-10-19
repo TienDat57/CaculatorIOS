@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classNames from 'classnames/bind';
-import { evaluate, round } from "mathjs";
+import { evaluate, i, round } from "mathjs";
 
 import Display from '@components/Display';
 import Header from '@components/Header';
@@ -11,23 +11,43 @@ const cx = classNames.bind(styles);
 
 function Calculator() {
    const [input, setInput] = useState("");
+   const [inputShow, setInputShow] = useState("");
    const [answer, setAnswer] = useState("");
 
-   const inputHandler = (event) => {
-      if (answer === "Invalid Input!!") return;
-      let valueInput = event.target.innerText;
+   const storeToHistory = (result) => {
+      let listCalculation = localStorage.getItem("listCalculation");
+      listCalculation = listCalculation ? JSON.parse(listCalculation) : [];
+      listCalculation.push(result)
+      localStorage.setItem("listCalculation", JSON.stringify(listCalculation))
+   }
 
-      let stringInput = input + valueInput;
-      if (stringInput.length > 14) return;
+   const inputHandler = (event) => {
+      let val = event.target.innerText;
+
+      const changeAC = document.getElementById("clearButton");
+      changeAC.innerText = "C";
+
+      if (val > 9) return;
+      let str = input + val;
+
+      if (val != "+" && val != "-" && val != "x" && val != "÷") {
+         setInputShow(inputShow + val);
+      } if (input[input.length - 1] == "+" || input[input.length - 1] == "-" || input[input.length - 1] == "x" || input[input.length - 1] == "÷") {
+         setInputShow(val);
+      }
 
       if (answer !== "") {
-         setInput(answer + valueInput);
+         setInputShow(val);
+         setInput(val);
          setAnswer("");
-      } else setInput(stringInput);
+      } else setInput(str);
    };
 
-   const clearInput = () => {
+
+   const clearInput = (event) => {
+      event.target.innerText = "AC";
       setInput("");
+      setInputShow("");
       setAnswer("");
    };
 
@@ -40,6 +60,7 @@ function Calculator() {
       finalExpression = finalExpression.replaceAll(",", ".");
 
       result = evaluate(finalExpression);
+      storeToHistory({ expression: finalExpression, result: result });
       isNaN(result) ? setAnswer(result) : setAnswer(round(result, 3));
    };
 
@@ -59,10 +80,10 @@ function Calculator() {
          }
          setAnswer("");
       } else {
-         if (input.charAt(0) === "-") {
+         if (inputShow.charAt(0) === "-") {
             let plus = "+";
             setInput((prev) => plus.concat(prev.slice(1, prev.length)));
-         } else if (input.charAt(0) === "+") {
+         } else if (inputShow.charAt(0) === "+") {
             let minus = "-";
             setInput((prev) => minus.concat(prev.slice(1, prev.length)));
          } else {
@@ -76,13 +97,13 @@ function Calculator() {
       <div className={cx("main")}>
          <div className={cx("calculator")}>
             <Header />
-            <Display input={input} setInput={setInput} answer={answer} />
+            <Display inputShow={inputShow} setInputShow={setInputShow} input={input} setInput={setInput} answer={answer} />
             <KeyBoard
                inputHandler={inputHandler}
                clearInput={clearInput}
                calculateAnswer={calculateAns}
                changePlusMinus={changePlusMinus}
-            ></KeyBoard>
+            />
          </div>
       </div>
    );
