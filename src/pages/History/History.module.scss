@@ -4,11 +4,11 @@
    gap: 55px;
    width: 500px;
    position: absolute;
-   top: 40%;
-   left: 50%;
-   transform: translate(-50%, -50%);
+   top: 30px;
+   left: 40%;
 
    .history-title {
+      text-align: center;
       font-size: 60px;
       font-weight: 600;
 
@@ -25,20 +25,21 @@
    .list-calculation {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 10px;
+
 
       .history-item {
-         font-size: 40px;
+         font-size: 30px;
          display: list-item;
-         list-style-type: decimal;
+         list-style-type: square;
       }
    }
    .clear-history {
       font-size: 40px;
       background-color: #534b4c;
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 10px;
+      padding: 20px 20px;
+      border-radius: 20px;
       cursor: pointer;
       transition: all 0.3s ease-in-out;
 
