@@ -37,10 +37,6 @@ npm run test
 
 
 ### Visit page Calculator 
-<a href="https://tiendat57.github.io/UDT_Testing/" >UDT Testing</a>
-```
-https://tiendat57.github.io/UDT_Testing/
-```
 
 ### How to view source code
 
