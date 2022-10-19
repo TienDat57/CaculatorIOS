@@ -24,7 +24,6 @@ describe('Button', () => {
       >
          AC
       </Button>);
-      fireEvent.click(screen.getByText('AC'));
 
       const mockCallBack = jest.fn();
       const button = screen.getByText('AC');

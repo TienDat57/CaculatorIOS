@@ -53,6 +53,7 @@ function Display({ inputShow, setInputShow, input, setInput, answer }) {
                      name="value"
                      className={cx("input")}
                      value={answer}
+                     data-testid="answer"
                      disabled
                   />
                </>
