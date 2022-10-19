@@ -37,7 +37,8 @@ function Calculator() {
       }
 
       if (answer !== "") {
-         setInput(answer + val);
+         setInputShow(val);
+         setInput(val);
          setAnswer("");
       } else setInput(str);
    };
@@ -96,13 +97,13 @@ function Calculator() {
       <div className={cx("main")}>
          <div className={cx("calculator")}>
             <Header />
-            <Display input={inputShow} setInput={setInputShow} answer={answer} />
+            <Display inputShow={inputShow} setInputShow={setInputShow} input={input} setInput={setInput} answer={answer} />
             <KeyBoard
                inputHandler={inputHandler}
                clearInput={clearInput}
                calculateAnswer={calculateAns}
                changePlusMinus={changePlusMinus}
-            ></KeyBoard>
+            />
          </div>
       </div>
    );
