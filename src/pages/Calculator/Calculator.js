@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import { evaluate, i, round } from "mathjs";
 
@@ -37,8 +37,13 @@ function Calculator() {
       }
 
       if (answer !== "") {
-         setInputShow(val);
-         setInput(val);
+         if (val == "+" || val == "-" || val == "x" || val == "÷") {
+            setInput(answer + val);
+            setInputShow(answer);
+         } else {
+            setInput(val);
+            setInputShow(val);
+         }
          setAnswer("");
       } else setInput(str);
    };
